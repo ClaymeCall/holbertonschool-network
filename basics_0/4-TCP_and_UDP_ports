@@ -1,2 +1,6 @@
-#!/bin/bash
-netstat -tuln
+#!/usr/bin/env bash
+# Display listening TCP and UDP ports, and listening UNIX sockets
+#-l : Display listening sockets.
+#-n : Display numerical addresses and port numbers.
+#-p : Display the PID and name of the program to which each socket belongs.
+netstat -lnp

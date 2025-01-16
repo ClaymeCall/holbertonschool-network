@@ -1,0 +1,108 @@
+### What Happens When You Type `https://www.google.com` in Your Browser and Press Enter
+
+When you type `https://www.google.com` in your browser and press Enter, a fascinating series of steps happens behind the scenes. These steps ensure that the content you’re looking for appears on your screen quickly and securely. Let’s explore this process step by step, using simpler terms to make it easier to understand.
+
+---
+
+### **Understanding IP Addresses**
+
+Every device on the internet is identified by a unique address called an IP (Internet Protocol) address. Think of it like a home address for your device. Just as a postal worker uses your home address to deliver a package, the internet uses IP addresses to deliver data to the right place. For example, Google’s servers have IP addresses so your browser knows where to find them.
+
+---
+
+### 1. **DNS Request**
+
+When you type the URL into your browser, the first step is to figure out the IP address of `www.google.com`. This is where the Domain Name System (DNS) comes in. DNS works like a phone book for the internet:
+
+1. Your browser checks its memory (called a cache) to see if it already knows the IP address for `www.google.com`.
+2. If it doesn’t, it asks your computer’s operating system.
+3. If still unresolved, your computer asks a DNS resolver, which is often run by your internet service provider (ISP).
+4. The resolver checks other DNS servers to find the correct IP address for `www.google.com`.
+5. Once found, the IP address is sent back to your browser.
+
+This process happens within milliseconds and is essential for connecting to the correct server.
+
+---
+
+### 2. **TCP/IP**
+
+Now that the browser knows the server’s IP address, it needs to connect to it. This is done using the Transmission Control Protocol (TCP) over the Internet Protocol (IP):
+
+1. Your browser sends a small request to the server, saying it wants to start a conversation (this is called a handshake).
+2. The server replies, confirming that it’s ready.
+3. Your browser confirms, and the connection is established.
+
+This handshake ensures that your browser and the server can send and receive data reliably.
+
+---
+
+### 3. **Firewall**
+
+As your request travels across the internet, it passes through firewalls. These are like security checkpoints that inspect the data to ensure it’s safe and legitimate. Firewalls can be found in your local network, at your ISP, and at Google’s data center. They help block harmful traffic while allowing your request to continue.
+
+---
+
+### 4. **HTTPS/SSL**
+
+Since the URL starts with `https`, the connection between your browser and the server is encrypted for security. This happens through SSL (Secure Sockets Layer) or its modern version, TLS (Transport Layer Security):
+
+1. Your browser asks the server to prove its identity by showing an SSL certificate.
+2. The server provides the certificate, which is verified by a trusted organization called a Certificate Authority (CA).
+3. Both the browser and server agree on a way to encrypt the data they exchange, ensuring that no one else can see or tamper with it.
+
+---
+
+### 5. **Load Balancer**
+
+After the secure connection is established, your request reaches Google’s load balancer. This is a system that distributes incoming traffic across multiple servers:
+
+- It ensures that no single server gets overwhelmed with too many requests.
+- It checks which servers are available and working efficiently.
+- If one server is busy or offline, the load balancer sends your request to another server.
+
+---
+
+### 6. **Web Server**
+
+The server chosen by the load balancer receives your request. A web server is responsible for handling:
+
+- Simple tasks like serving static files (e.g., images, CSS, or JavaScript).
+- Passing more complex requests to other systems for further processing.
+
+---
+
+### 7. **Application Server**
+
+If your request needs more work, it’s sent to an application server. For example, when you search for something on Google:
+
+- The application server processes your search query.
+- It talks to other systems to gather relevant data.
+- It prepares a response, like a list of search results.
+
+---
+
+### 8. **Database**
+
+Behind the scenes, the application server often retrieves information from a database. Databases store and organize data efficiently so it can be retrieved quickly. Google’s databases are:
+
+- Spread across many servers to handle large amounts of data.
+- Designed to deliver results in milliseconds, even when millions of people are searching at the same time.
+
+---
+
+### 9. **Response and Rendering**
+
+Once the application server creates the response, it’s sent back to your browser:
+
+1. The web server adds additional information (called headers) to the response and sends it over the connection.
+2. Your browser receives the response and starts displaying the content. This involves:
+   - Reading the HTML to build the structure of the page (called the DOM).
+   - Fetching additional files like images, CSS, and JavaScript.
+   - Applying styles and running scripts to create the final appearance of the page.
+
+---
+
+### Conclusion
+
+From typing `https://www.google.com` to seeing the page on your screen, many steps work together behind the scenes. Each one—from finding the server’s IP address to securely transferring data and rendering the page—is crucial for a fast and reliable web experience. This process is a great example of how different technologies come together to make the internet work smoothly.
+
